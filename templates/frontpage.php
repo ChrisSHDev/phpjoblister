@@ -2,29 +2,30 @@
 
 <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1 class="display-3">Find A Job</h1>
+      <form method="GET" action="index.php">
+        <select name="category" class="form-control" id="">
+          <option value="0">Choose Category</option>
+          <?php foreach($categories as $category): ?>
+            <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+          <?php endforeach ?>
+        </select>
+        <br>
+        <input type="submit" value="FIND" class="btn btn-lg btn-success">
+      
+      </form>
     </div>
   </div>
 
   <div class="container">
     <!-- Example row of columns -->
-    <div class="row marketing">
-        <div class="col-md-10">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
-
-
+    <h3><?php echo $title; ?></h3>
     <?php foreach($jobs as $job) : ?>
     <div class="row marketing">
         <div class="col-md-10">
             <h2><?php echo $job->job_title; ?></h2>
             <p><?php echo $job->description; ?></p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="job.php?id=<?php echo $job->id; ?>" role="button">View details &raquo;</a></p>
         </div>
     </div>
     <?php endforeach; ?>

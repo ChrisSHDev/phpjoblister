@@ -32,7 +32,7 @@
             $this->stmt = $this->dbh->prepare($query);
         }
 
-        public function bind($para, $value, $type = null){
+        public function bind($param, $value, $type = null){
             if(is_null($type)){
                 switch(true){
                     case is_int ($value) : 
@@ -51,7 +51,7 @@
                         $type = PDO::PARAM_STR;
                 }
             }
-            $this -> stmt->bindValue($param, $value, $type);
+            $this->stmt->bindValue($param, $value, $type);
         }
 
         public function execute(){
