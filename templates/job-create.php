@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <label for="">Category</label>
-                <select class="form-control" type="text" name="category" >
+                <select class="form-control" type="text" name="category_id" >
                 <option value="0">Choose Category</option>
 
                 <?php foreach($categories as $category): ?>
@@ -28,11 +28,11 @@
             </div>
             <div class="form-group">
                 <label for="">Location</label>
-                <input class="form-control" type="text" name="Location" >
+                <input class="form-control" type="text" name="location" >
             </div>
             <div class="form-group">
                 <label for="">Salary</label>
-                <input class="form-control" type="text" name="Salary" >
+                <input class="form-control" type="text" name="salary" >
             </div>
             <div class="form-group">
                 <label for="">Contact User</label>
